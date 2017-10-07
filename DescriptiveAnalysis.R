@@ -1,6 +1,6 @@
 
 
-setwd('~/Github/MethodsDiversity')
+setwd('~/Documents/MethodsDiversity')
 
 
 ################ APSA 2017 Participation
@@ -70,6 +70,22 @@ data<-rev(data)
 par(mar=c(2,2,2,2), mgp=c(1,0,0))
 dotchart(data, pch=19, xlab="Percent women", )
 
+##### Polmeth over time
 
+confTime<-read.csv("women_in_conferences.csv", header = TRUE, stringsAsFactors = F, row.names = 1)
 
+pdf(width=7, height=3, file="overTime.pdf")
+head(confTime)
+par(mar=c(2,2,2,2), mgp=c(1,0,0))
+plot(c(2006:2009, 2011:2016), y=100*as.numeric(confTime[1,]), 
+     xaxt="n", yaxt="n", ylab="Percent Women", xlab="Year", type="b", pch=19, ylim=c(20, 35))
+mtext(side=1, c(2006:2009, 2011:2016), at=c(2006:2009, 2011:2016))
+mtext(side=2, seq(20, 35, by=5), at=seq(20, 35, by=5))
+abline(h=27, lty=2)
+text(2008, 28, "2017 Level")
+dev.off()
 
+height
+
+length(confTime[1,])
+length(2006:2009, 2010:2016)
